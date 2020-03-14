@@ -6,7 +6,7 @@ using Unity;
 
 namespace EzzInjector.RegisterStep
 {
-    public class RegisterDependenciesRegisterStep : IRegisterStep
+    internal class RegisterDependenciesRegisterStep : IRegisterStep
     {
         public void ApplyStep(IRegisterProcessor registerProcessor)
         {

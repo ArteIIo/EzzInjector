@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace EzzInjector.RegisterStep
 {
-    public class FilterAssembliesRegisterStep : IRegisterStep
+    internal class FilterAssembliesRegisterStep : IRegisterStep
     {
         public void ApplyStep(IRegisterProcessor registerProcessor)
         {
