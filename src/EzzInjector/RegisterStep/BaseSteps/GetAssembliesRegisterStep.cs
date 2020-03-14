@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace EzzInjector.RegisterStep
 {
-    internal class GetAssembliesRegisterStep : IRegisterStep
+    public class GetAssembliesRegisterStep : IRegisterStep
     {
         public void ApplyStep(IRegisterProcessor registerProcessor)
         {

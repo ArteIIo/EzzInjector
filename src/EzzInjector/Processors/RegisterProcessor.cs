@@ -1,12 +1,11 @@
-﻿using System;
+﻿using EzzInjector.RegisterStep;
 using System.Collections.Generic;
 using System.Reflection;
-using EzzInjector.RegisterStep;
 using Unity;
 
 namespace EzzInjector.Processors
 {
-    public class RegisterProcessor : IRegisterProcessor
+    internal class RegisterProcessor : IRegisterProcessor
     {
         private readonly List<IRegisterStep> _registerSteps;
         private readonly IUnityContainer _unityContainer;

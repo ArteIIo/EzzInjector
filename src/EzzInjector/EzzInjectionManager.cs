@@ -1,9 +1,10 @@
 ﻿using EzzInjector.Processors;
+using System;
 using Unity;
 
 namespace EzzInjector
 {
-    public class EzzInjectionManager
+    public class EzzInjectionManager : IDisposable
     {
         private string _assembliesPrefix;
         private EzzBootstrapper _ezzBootstrapper;
@@ -46,6 +47,14 @@ namespace EzzInjector
         {
             var registerProcessor = new RegisterProcessor(_container);
             BuildContainer(registerProcessor);
+        }
+
+        public void Dispose()
+        {
+            if (_container == null) return;
+
+            _container.Dispose();
+            _container = null;
         }
     }
 }
