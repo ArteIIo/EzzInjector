@@ -10,6 +10,8 @@ namespace EzzInjector
         private EzzBootstrapper _ezzBootstrapper;
         private IUnityContainer _container;
 
+        public IUnityContainer Container => _container;
+
         private EzzInjectionManager()
         {
             _container = new UnityContainer();
