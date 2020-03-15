@@ -9,6 +9,7 @@ namespace EzzInjector
         {
             registerProcessor
                 .AddRegisterStep<GetAssembliesRegisterStep>()
+                .AddRegisterStep<FilterAssembliesRegisterStep>()
                 .AddRegisterStep<RegisterDependenciesRegisterStep>();
         }
 
