@@ -1,4 +1,5 @@
 ﻿using EzzInjector.Contracts;
+using EzzInjector.Extensions;
 using EzzInjector.Processors;
 using System;
 using System.Linq;
@@ -12,9 +13,8 @@ namespace EzzInjector.RegisterStep
         {
             foreach (var item in registerProcessor.Asseblies)
             {
-                var typesToRegister = item.GetTypes().Where(type =>
-                    type.IsClass
-                    && !type.GetInterfaces().Contains(typeof(ITypeRegister)));
+                var typesToRegister = item.GetLoadableClassesTypes()
+                    .Where(type => !type.GetInterfaces().Contains(typeof(ITypeRegister)));
 
                 foreach (var type in typesToRegister)
                 {
@@ -23,9 +23,9 @@ namespace EzzInjector.RegisterStep
                         registerProcessor.Container.RegisterType(typeInterface, type);
                 }
 
-                var types = item.GetTypes()
+                var types = item.GetLoadableClassesTypes()
                     .Where(mytype => mytype.GetInterfaces()
-                    .Contains(typeof(ITypeRegister)));
+                        .Contains(typeof(ITypeRegister)));
 
                 foreach (var type in types)
                 {
