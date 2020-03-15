@@ -12,14 +12,15 @@ namespace EzzInjector.RegisterStep
         {
             var assemblyPath = GetApplicationPath(AppDomain.CurrentDomain);
             var pathes = Directory.GetFiles(assemblyPath, "*.dll");
-
             var assemblyList = new List<Assembly>();
+
             foreach(var path in pathes)
             {
                 var assembly = Assembly.LoadFrom(path);
                 assemblyList.Add(assembly);
             }
 
+            assemblyList.Add(Assembly.GetEntryAssembly());
             registerProcessor.Asseblies = new List<Assembly>(assemblyList);
         }
 
