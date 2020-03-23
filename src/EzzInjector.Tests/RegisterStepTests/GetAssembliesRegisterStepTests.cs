@@ -30,7 +30,7 @@ namespace EzzInjector.Tests.RegisterStepTests
 
             //Assert
             Assert.Equal(
-                pathes.Length + 1,
+                pathes.Length,
                 resultAssembly.Count);
         }
 
