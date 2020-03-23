@@ -29,5 +29,6 @@ steps:
 
 - task: VSTest@2
   inputs:
+    testAssemblyVer2: 'src\EzzInjector.Tests\EzzInjector.Tests.csproj'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
